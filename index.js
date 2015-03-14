@@ -1,12 +1,17 @@
 var Gpio = require('onoff').Gpio,
     led = new Gpio(17, 'out'),
-    iv = setInterval(function() {
-      led.writeSync(led.readSync() === 0 ? 1 : 0);
-    }, 50);
+    interval = 1000,
+    blink = function(interval) {
+      if (interval > 0) {
+        led.writeSync(led.readSync() === 0 ? 1 : 0);
+        interval -= 100;
+        setTimeout(function() {
+          blink(interval);
+        }, interval);
+      } else {
+        led.writeSync(0); // turn LED off
+        led.unexport(); // unexport GPIO and free resources
+      }
+    };
 
-// stop blinking the LED and turn it off after 1 second
-setTimeout(function() {
-  clearInterval(iv); // stop blinking
-  led.writeSync(0); // turn LED off
-  led.unexport(); // unexport GPIO and free resources
-}, 1000);
+blink(interval);
