@@ -1,0 +1,34 @@
+{
+  "name": "rpi-led",
+  "version": "0.1.0",
+  "description": "Make an LED blink using node.js on a Raspberry Pi.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/troywarr/rpi-led.git"
+  },
+  "keywords": [
+    "led",
+    "raspberry",
+    "pi",
+    "node",
+    "nodejs",
+    "node-js",
+    "node.js",
+    "raspbian",
+    "raspi",
+    "rpi"
+  ],
+  "author": "Troy Warr <troy3000@gmail.com> (http://troywarr.info/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/troywarr/rpi-led/issues"
+  },
+  "homepage": "https://github.com/troywarr/rpi-led",
+  "dependencies": {
+    "onoff": "^1.0.2"
+  }
+}
